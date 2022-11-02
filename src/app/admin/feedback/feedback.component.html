@@ -1,0 +1,42 @@
+<div class="container">
+
+    <nav class="navbar navbar-expand-md" style="background-color: #e3f2fd;">
+        <a href="/admin" class="navbar-brand">Home</a>
+        <a href="/userlist" class="nav-link">Customers</a>
+        <a  href="/officerlist" class="nav-link ">Field Officers</a>
+        <a href="/loanlist" class="nav-link ">Loan Requests</a>
+        <a href="/assign" class="nav-link ">Assign</a>
+        <a href="/adminfdquestionlist" class="nav-link ">Questions</a>
+        <a href="/helplist" class="nav-link ">Help</a>
+        <a href="feedback" class="nav-link disabled">Feedback</a>
+        <a href="/adminprofile" class="nav-link ">Profile</a>
+        <a href="/login" class="nav-link ">Logout</a>
+        
+      </nav>
+      <br>
+    <div class="header">
+      <div class="list-row">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search text here..." [(ngModel)]="filter" />
+          </div>
+      </div>
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Questions</th>
+          <th>Feedback</th>
+          <!--Edit / Delete-->
+        </tr>
+      </thead>
+    </table>
+  
+    <div class="footer">
+      <!--Pagination-->
+      <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+    </div>
+  </div>
+  
+  <!--updateUser(user.userId)-->
+  

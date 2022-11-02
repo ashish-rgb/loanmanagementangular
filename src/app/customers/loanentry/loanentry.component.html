@@ -1,0 +1,133 @@
+<!--input [(ngModel)]="fullName"/>
+    //{{fullName}}-->
+    <div class="container">
+    <nav class="navbar navbar-expand-md" style="background-color: #e3f2fd;">
+        <a href="/customer" class="navbar-brand">Home</a>
+        <a href="loanentry" class="nav-link ">Apply Loan</a>
+        <a href="loanlist" class="nav-link ">Loan Requests</a>
+        <a  class="nav-link ">Ask Question</a>
+        <a  class="nav-link ">Help</a>
+        <a  class="nav-link ">Give Feedback</a>
+        <a href="/customerprofile" class="nav-link ">Profile</a>
+        <a href="/login" class="nav-link ">Logout</a>
+        
+      </nav>
+
+      <br>
+
+    <form name="userForm" #form="ngForm" autocomplete="off" 
+    (ngSubmit)="onSubmit(form)">
+        
+        <!--User Id - AutoGenerate-->
+        <input type="hidden"  name="userId" [(ngModel)]="usersService.formUserData.userId">
+    
+        <!--FullName-->
+        <div class="form-group">
+            <label>Full Name</label>
+            <input name="fullName" #fullName="ngModel" 
+            [(ngModel)]="usersService.formUserData.fullName"
+            class="form-control" placeholder="Enter full name" 
+            minlength="6" maxlength="25" required 
+            [ngClass]="{'is-invalid':fullName.touched && fullName.invalid}"
+            />
+    
+            <div class="validation-error" *ngIf="fullName.touched && fullName.invalid">
+                <div *ngIf="fullName.errors.required">
+                    Full name should not be empty
+                </div>
+            </div>
+            </div>
+
+            <!--Mobile Number-->
+            <div class="form-group">
+                <label>Mobile No</label>
+                <input name="mob" #mob="ngModel" 
+                [(ngModel)]="usersService.formUserData.mob"
+                class="form-control" placeholder="Enter Mobile Number" 
+                minlength="6" maxlength="25" required 
+                [ngClass]="{'is-invalid':mob.touched && mob.invalid}"
+                />
+        
+                <div class="validation-error" *ngIf="mob.touched && mob.invalid">
+                    <div *ngIf="mob.errors.required">
+                        Mobile should not be empty
+                    </div>
+                </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input name="email" #email="ngModel" 
+                    [(ngModel)]="usersService.formUserData.email"
+                    class="form-control" placeholder="Enter Email" 
+                    minlength="6" maxlength="25" required 
+                    [ngClass]="{'is-invalid':email.touched && email.invalid}"
+                    />
+            
+                    <div class="validation-error" *ngIf="email.touched && email.invalid">
+                        <div *ngIf="email.errors.required">
+                            Email should not be empty
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Amount</label>
+                        <input name="amount" #amount="ngModel" 
+                        [(ngModel)]="usersService.formUserData.amount"
+                        class="form-control" placeholder="Enter Amount" 
+                        minlength="6" maxlength="25" required 
+                        [ngClass]="{'is-invalid':amount.touched && amount.invalid}"
+                        />
+                
+                        <div class="validation-error" *ngIf="amount.touched && amount.invalid">
+                            <div *ngIf="amount.errors.required">
+                                Amount should not be empty
+                            </div>
+                        </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Period</label>
+                            <input name="mob" #mob="ngModel" 
+                            [(ngModel)]="usersService.formUserData.mob"
+                            class="form-control" placeholder="Specify period for loan" 
+                            minlength="6" maxlength="25" required 
+                            [ngClass]="{'is-invalid':mob.touched && mob.invalid}"
+                            />
+                    
+                            <div class="validation-error" *ngIf="mob.touched && mob.invalid">
+                                <div *ngIf="mob.errors.required">
+                                    Period should not be empty
+                                </div>
+                            </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label>Address</label>
+                                <input name="mob" #mob="ngModel" 
+                                [(ngModel)]="usersService.formUserData.mob"
+                                class="form-control" placeholder="Enter Your address" 
+                                minlength="6" maxlength="25" required 
+                                [ngClass]="{'is-invalid':mob.touched && mob.invalid}"
+                                />
+                        
+                                <div class="validation-error" *ngIf="mob.touched && mob.invalid">
+                                    <div *ngIf="mob.errors.required">
+                                        Address should not be empty
+                                    </div>
+                                </div>
+                                </div>
+
+    <br>
+    
+        <!--Button for submit-->
+        <br>
+        <div class="form-group">
+            <a href="/loanlist" class="btn btn-lg btn-primary form-control">Submit</a>&nbsp;
+            <button type="reset" class="btn btn-lg btn-secondary form-control">Reset</button>
+        </div>
+    </form>
+
+</div>
+    
+

@@ -1,0 +1,29 @@
+<div class="container">
+    <nav class="navbar navbar-expand-md" style="background-color: #e3f2fd;">
+        <a href="/customer" class="navbar-brand">Home</a>
+        <a href="/loanentry" class="nav-link ">Apply Loan</a>
+        <a href="/loanlist" class="nav-link ">Loan Requests</a>
+        <a href="/ask-question" class="nav-link ">Ask Question</a>
+        <a  class="nav-link ">Help</a>
+        <a  class="nav-link ">Give Feedback</a>
+        <a href="/customerprofile" class="nav-link ">Profile</a>
+        <a href="/login" class="nav-link ">Logout</a>
+        
+      </nav>
+      <br>
+</div>
+<div class="form-group">
+    <ngb-rating [max]="5" [(rate)]="starRating" [readonly]="false"></ngb-rating>
+    <br><div>
+        <h5>How's your experience</h5>
+    </div>
+    <input type="text" class="form-control">
+ </div>
+
+
+ <br>
+        <div class="form-group">
+            <a href="" class="btn btn-lg btn-primary form-control">Send</a>&nbsp;
+            <button type="reset" class="btn btn-lg btn-secondary form-control">Reset</button>
+        </div>
+
