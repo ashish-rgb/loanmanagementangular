@@ -1,0 +1,38 @@
+<div class="container">
+    <h4>Apply Loan Request </h4>
+      <hr>
+    <div class="header">
+      <div class="list-row">
+          <div class="input-group mb-3">
+              <input type="text" class="form-control" placeholder="Search text here..." [(ngModel)]="filter" />
+          </div>
+      </div>
+    </div>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Request Id</th>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Comment</th>
+          <th>Action</th>
+          <!--Edit / Delete-->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of this.usersService.users | filter: filter | paginate: {itemsPerPage: 3 , currentPage: page}">
+        </tr>
+      </tbody>
+    </table>
+  
+    <div class="footer">
+      <!--Pagination-->
+      <pagination-controls (pageChange)="page=($event)"></pagination-controls>
+    </div>
+  </div>
+  
+  <!--updateUser(user.userId)-->
+  
+
+

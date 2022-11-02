@@ -1,0 +1,65 @@
+<!--Reactive Form-- model-driven approach -->
+<div class="container">
+    <div class="form-group">
+      <h2>Loan Management System : Sign In </h2>
+      <hr />
+      <!--Reactive Form-->
+      <form [formGroup]="loginForm" (ngSubmit)="loginCredentials()">
+        <!--UserName-->
+        <div>
+          <input
+            type="text"
+            placeholder="Enter username"
+            formControlName="userName"
+            autocomplete="off"
+            required class="form-control"
+          />
+        </div>
+        <!--Username Validation message-->
+        <div *ngIf="isSubmitted && formControls.userName.errors">
+          <div
+            *ngIf="formControls.userName.errors.required"
+            class="loginError"
+          >
+            User name is required
+          </div>
+        </div>
+        <br>
+        <!--Password-->
+        <div>
+          <input
+            type="password"
+            placeholder="Enter password"
+            formControlName="password"
+            autocomplete="off"
+            required class="form-control"
+          />
+        </div>
+        <!--Password Validation message-->
+        <div *ngIf="isSubmitted && formControls.password.errors">
+          <div
+            *ngIf="formControls.password.errors.required"
+            class="loginError"
+          >
+            Password is required
+          </div>
+        </div>
+        <br />
+        <!--Submit-->
+        <div>
+          <!--button
+            class="btn btn-md btn-outline-primary" >
+            <i class="fa fa-sign-in"></i>
+            Login
+          </button-->
+          <a href="/admin" class="btn btn-md btn-outline-primary"><i class="fa fa-sign-in"></i>Login</a>
+          <a href="/user" class="btn btn-md btn-primary">SignUp</a>
+          <div><a href="/customer" class="btn btn-md btn-outline-primary"><i class="fa fa-sign-in"></i>Login Customer</a>
+            <a href="/fofficer" class="btn btn-md btn-outline-primary"><i class="fa fa-sign-in"></i>Login Officer</a></div>
+        </div>
+        <!--Displaying error-->
+        <div *ngIf="error" class="loginError">{{error}}</div>
+      </form>
+    </div>
+  </div>
+  
